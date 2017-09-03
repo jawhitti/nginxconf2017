@@ -1,0 +1,8 @@
+{
+   "class" : "#{EnvironmentColor}",
+   "icon"  : "fa fa-twitter",
+   "title" : "Tweets",
+   "text"  : "237"
+}
+
+

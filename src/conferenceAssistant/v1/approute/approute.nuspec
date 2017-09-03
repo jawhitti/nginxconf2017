@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>nginxConf2017.demo.approute</id>
+    <version>0.1.0.6</version>
+    <authors>jasonw</authors>
+    <owners>jasonw</owners>
+    <copyright>Copyright 2017</copyright>
+    <description>reworked for new theme</description>
+    <releaseNotes>separate routing for stats and services</releaseNotes>
+    <tags>nginx demo approute</tags>
+  </metadata>
+  <files>
+      <file src="*.conf" />
+  </files>
+</package>

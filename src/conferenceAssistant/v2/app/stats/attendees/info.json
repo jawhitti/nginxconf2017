@@ -1,0 +1,8 @@
+{
+   "class" : "#{EnvironmentColor}",
+   "icon"  : "fa fa-users",
+   "title" : "Attendees",
+   "text"  : "397"
+}
+
+

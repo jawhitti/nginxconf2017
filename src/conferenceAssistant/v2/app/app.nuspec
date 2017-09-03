@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>nginxConf2017.demo.app</id>
+    <version>0.3.7</version>
+    <authors>jasonw</authors>
+    <owners>jasonw</owners>
+    <copyright>Copyright 2017</copyright>
+    <description>Conference</description>
+    <releaseNotes>changed theme again</releaseNotes>
+    <tags>nginx demo</tags>
+  </metadata>
+  <files>
+      <file src="web.config" />
+      <file src="default.htm" />
+      <file src="conf-homepg-X-hero.png" />
+      <file src="css\**\*.*" target="css" /> 
+      <file src="js\**\*.*" target="js" /> 
+      <file src="stats\**\*.*" target="stats" /> 
+      <file src="services\**\*.*" target="services" /> 
+  </files>
+</package>

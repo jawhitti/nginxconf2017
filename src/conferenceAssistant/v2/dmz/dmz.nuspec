@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>nginxConf2017.demo.dmz</id>
+    <version>0.0.16.0</version>
+    <authors>jasonw</authors>
+    <owners>jasonw</owners>
+    <copyright>Copyright 2017</copyright>
+    <description>DMZ configuration for demo app</description>
+    <releaseNotes>Routes all traffic to live and next inner endpoints</releaseNotes>
+    <tags>nginx demo dmz</tags>
+  </metadata>
+  <files>
+      <file src="*.conf" />
+  </files>
+</package>

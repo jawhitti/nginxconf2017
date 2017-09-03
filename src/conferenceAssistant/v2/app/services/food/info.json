@@ -1,0 +1,8 @@
+{
+   "class" : "#{EnvironmentColor}",
+   "icon"  : "fa fa-cutlery",
+   "title" : "Food Finder",
+   "text"  : "Your guide to food available at or nearby the conference."
+}
+
+

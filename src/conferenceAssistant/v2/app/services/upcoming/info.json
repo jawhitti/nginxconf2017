@@ -1,0 +1,6 @@
+{
+   "class" : "#{EnvironmentColor}",
+   "icon"  : "fa fa-calendar",
+   "title" : "Upcoming Conferences",
+   "text"  : "Sign up now for upcoming conferences"
+}

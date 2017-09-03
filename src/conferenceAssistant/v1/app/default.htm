@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS demo page">
+    <title>Managing Continuous Delivery</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap-v3.2.0.css" rel="stylesheet">
+
+    <!--external css-->
+    <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/AdminLTE.simplified.css">
+    <link rel="stylesheet" href="css/jquery-jvectormap-1.2.2.css">
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="css/_all-skins.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+</head>
+
+<body style='background-color:#{BodyBackgroundColor}'>
+
+<section class="content" style='background-color:#{BodyBackgroundColor}'>
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-12" style="background-color:#{BodyBackgroundColor}">
+    <img src="conf-homepg-X-hero.png" width="100%" height="100%"/>
+  </div>
+  <div class="col-lg-9 col-md-8 col-sm-12>
+    <div class="container">
+    <div class="jumbotron">
+       <h1 class="display-3">#{ConferenceName}</h1>
+      <p class="lead">#{Greeting}</p>
+      <hr class="my-4">
+      <p>Use this application to see live conference stats as well, find free food, stock up on swag, and make plans to do it again next month!</p>
+   </div>  
+   </div>
+</div>
+</section>
+
+
+    <section class="content" style='background-color: #f0f0f0'>
+
+<h3>Live Stats</h3>
+These statistics are 100% real and not at all just hardcoded values.
+
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+
+                    <div class="info-box" id="info-box-1">
+                        <span class="info-box-icon" >
+                            <i></i>
+                        </span>
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">Attendees</span>
+                                <span class="info-box-number">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="info-box" id="info-box-2">
+                        <span class="info-box-icon">
+                            <i ></i>
+                        </span>
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">Vendors</span>
+                                <span class="info-box-number">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="info-box" id="info-box-3">
+                        <span class="info-box-icon">
+                            <i></i>
+                        </span>
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">Tweets</span>
+                                <span class="info-box-number">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+<div><font color="white">#{Octopus.Project.Name} #{Octopus.Release.Number} - powered by <strong>NOS</strong></font></div>
+
+</body>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/AdminLTE.js"></script>
+
+<script> 
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function fetchContent(uri, item, callback) {
+
+        var interval = Math.floor((Math.random() * 1000) + 1);
+        sleep(interval);
+
+        $.get( uri, function( data ) {
+            callback(item, data);
+        });
+    }
+
+    function populateUI(item, info) {
+        $(item).find(".info-box-icon").addClass("bg-" + info.class);
+        $(item).find(".info-box-icon:first-child").addClass(info.icon);
+        $(item).find(".info-box").find(".info-box-text").html(info.title);
+        $(item).find(".info-box").find(".info-box-number").html(info.text);
+    }
+
+
+    function RefreshUI(){
+        fetchContent("/stats/attendees/info.json",  "#info-box-1", populateUI);
+        fetchContent("/stats/vendors/info.json",    "#info-box-2", populateUI);
+        fetchContent("/stats/tweets/info.json",     "#info-box-3", populateUI);
+    }
+
+RefreshUI();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>nginxConf2017.demo.dashboard</id>
+    <version>0.0.1</version>
+    <authors>jasonw</authors>
+    <owners>jasonw</owners>
+    <copyright>Copyright 2017</copyright>
+    <description>Dashboard config for nginx.conf 2017 demo</description>
+    <releaseNotes>Now featuring variable replacement</releaseNotes>
+    <tags>nginx dmz</tags>
+  </metadata>
+  <files>
+      <file src="dashboard.conf" />
+  </files>
+</package>
